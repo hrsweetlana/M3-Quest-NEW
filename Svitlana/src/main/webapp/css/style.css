@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f1f1f1;
+    font-family: Arial, sans-serif;
+}
+.container {
+    width: 14cm;
+    height: 5cm;
+    /*border: 1px solid #000;*/
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    background-color: #dfdede;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.btn {
+    width: 7cm;
+    padding: 10px 20px;
+    font-size: 16px;
+    /*border: 1px solid #000;*/
+    border-radius: 5px;
+    background-color: #A9A9A9;
+    color: #000;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn:hover {
+    /*background-color: #808080;*/
+    background-color: #ff5722;
+    border-color: #e63c05;
+}
+ .quiz-option {
+     display: inline-block;
+     margin-right: 5px;
+ }
+
+/* Основний стиль для радіокнопок */
+input[type="radio"] {
+    appearance: none;
+    border: 1px solid #ccc;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Стиль для радіокнопок при виборі */
+input[type="radio"]:checked {
+    background-color: #ff5722; /* Наприклад, оранжевий колір */
+    border-color: #e63c05;
+}
+
+/* Додатковий стиль для лейблів, щоб виглядало краще */
+label {
+    margin-left: 8px;
+    cursor: pointer;
+}
