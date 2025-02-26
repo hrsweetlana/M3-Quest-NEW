@@ -37,6 +37,8 @@ public class QuizServlet extends HttpServlet {
         session.setAttribute("questionIndex", 0);
         session.setAttribute("questions", questions);
         session.setAttribute("question", question);
+        int counter = 0;
+        session.setAttribute("counter", counter);
 
         getServletContext().getRequestDispatcher("/quiz_questions.jsp").forward(req, resp);
     }

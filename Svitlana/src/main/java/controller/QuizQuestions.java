@@ -2,8 +2,6 @@ package controller;
 
 import entity.Question;
 import entity.Quiz;
-import repository.QuestionRepository;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,6 +34,9 @@ public class QuizQuestions extends HttpServlet {
         int answerIndex = Integer.parseInt(req.getParameter("answerIndex"));
 
         if (correctAnswer != answerIndex) {
+            int counter = (int)session.getAttribute("counter");
+            counter++;
+            session.setAttribute("counter", counter);
             getServletContext().getRequestDispatcher("/quiz_questions.jsp").forward(req, resp);
         } else {
 
@@ -46,6 +47,7 @@ public class QuizQuestions extends HttpServlet {
                 Quiz quiz = (Quiz) session.getAttribute("quiz");
                 Question newQuestion = quiz.getQuestions().findAll().get(questionIndex);
                 session.setAttribute("question", newQuestion);
+                session.setAttribute("questionIndex", questionIndex);
                 getServletContext().getRequestDispatcher("/quiz_questions.jsp").forward(req, resp);
             } else {
                 getServletContext().getRequestDispatcher("/restart_quiz.jsp").forward(req, resp);
