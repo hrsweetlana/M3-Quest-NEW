@@ -20,6 +20,9 @@ public class QuizServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+
         String questIndex = req.getParameter("index");
         int index = Integer.parseInt(questIndex);
         HttpSession session = req.getSession();

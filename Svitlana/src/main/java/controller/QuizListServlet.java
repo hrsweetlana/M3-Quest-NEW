@@ -17,6 +17,8 @@ public class QuizListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         ArrayList<Quiz> quizzes = quizzesRepository.findAll();
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
         req.getSession().setAttribute("quizzes", quizzes);
         getServletContext().getRequestDispatcher("/chose_quiz.jsp").forward(req, resp);
     }
