@@ -13,8 +13,8 @@
 <body>
 <div class="container">
     <p>Ви успішно завершили тест!</p>
-    <p>Ви помилились <c:out value="${counter}"/> разів</p>
-    <button onclick="redirectToPage('/choseQuiz')" class="btn">Вибрати тест</button>
+    <p>Кількість помилок : <c:out value="${counter}"/> </p>
+    <button onclick="redirectToPage('/start')" class="btn">Меню</button>
 </div>
 </body>
 </html>
